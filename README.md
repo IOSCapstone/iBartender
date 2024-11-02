@@ -81,3 +81,16 @@ Wireframes
 
 ![WireFrameUpload](Images/WireFrame.jpg)
 
+**4. Tasks**
+- Create a Welcome Page (Ethan)
+- Create Sign up Page (Ethan)
+- Create Login Page (Ethan)
+- Create Homepage (Amin)
+- Create Saved Recipes Page (Christian)
+- Create FIndBarNearYou Page (Christian)
+- Integrate Apple Maps (Christian)
+- Setup Firebase Account credentials database (Cesar)
+- Setup Saved Recipes collection for the specified accounts (Cesar)
+- Integrate CocktailDB (Amin)
+- Search Algorithm (Amin)
+
