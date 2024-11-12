@@ -24,7 +24,7 @@ This app would be for enternainment and some adult fun.  Will be able to search 
 **1. User Stories (Required and Optional)**  
 
 ***Required Must-have Stories***
-- User can register an account
+- User can register an account - COMPLETED
 - User can log in when account is created
 - User can search by cocktail
 - User can also search by ingredients
@@ -91,6 +91,6 @@ Wireframes
 - Integrate Apple Maps (Christian)
 - Setup Firebase Account credentials database (Cesar)
 - Setup Saved Recipes collection for the specified accounts (Cesar)
-- Integrate CocktailDB (Amin)
+- Integrate CocktailDB (Amin) - COMPLETED
 - Search Algorithm (Amin)
 
