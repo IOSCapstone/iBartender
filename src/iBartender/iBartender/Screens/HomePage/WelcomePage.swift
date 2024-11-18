@@ -8,7 +8,7 @@
 import SwiftUICore
 import SwiftUI
 
-struct HomePage: View {
+struct WelcomePage: View {
     var body: some View {
             VStack(spacing: 20) {
                 Text("iBartender")
@@ -42,6 +42,6 @@ struct HomePage: View {
 
 #Preview {
     NavigationStack {
-        HomePage()
+        WelcomePage()
     }
 }

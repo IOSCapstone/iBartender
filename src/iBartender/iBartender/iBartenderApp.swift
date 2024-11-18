@@ -18,8 +18,7 @@ struct iBartenderApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                HomePage()
-                
+                WelcomePageView()
             }
         }
     }

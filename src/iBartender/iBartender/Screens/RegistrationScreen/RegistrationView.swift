@@ -64,7 +64,7 @@ struct RegistrationView: View {
         .navigationBarTitle("Sign Up", displayMode: .inline)
         // Navigation destination to LandingPage
         .navigationDestination(isPresented: $isRegistered) {
-            LandingPageView()
+            CocktailFeedView()
         }
     }
 

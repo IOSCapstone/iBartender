@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LandingPageView: View {
+struct CocktailFeedView: View {
     @State private var searchText: String = ""
     @State private var cocktails: [Cocktail] = []
     @State private var topCocktails: [Cocktail] = []
@@ -16,25 +16,36 @@ struct LandingPageView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 20) {
+                VStack(spacing: 12) {
+                    
+                    HStack {
+                        NavigationLink(destination: BarsNearYouView()) {
+                            Image(systemName: "wineglass").font(.system(size: 20))
+                        }
+                        
+                        Spacer()
+                        
+                        NavigationLink(destination: SavedRecipesView()) {
+                            Image(systemName: "book").font(.system(size: 20))
+                        }
+                    }
+                    .padding()
+                    
+                    Text("Find Cocktails").font(.headline)
+                    
                     // Search Bar
-                    TextField("Search for a cocktail or ingredient", text: $searchText, onCommit: {
+                    TextField("Search for cocktails or ingredients", text: $searchText, onCommit: {
                         searchCocktails()
                     })
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                    .frame(maxWidth: 300) // Center the search bar with a fixed width
+                    .padding(.all)
 
-                    // Top Cocktails Section
-                    Text("Top Cocktails")
-                        .font(.headline)
-                        .padding(.top)
-
-                    // Limited height for the top cocktails section
+                    // Cocktail Feed
                     ScrollView {
                         VStack(spacing: 16) {
                             ForEach(topCocktails) { cocktail in
                                 HStack {
+                                    
                                     // Cocktail Image
                                     AsyncImage(url: URL(string: cocktail.strDrinkThumb ?? "")) { image in
                                         image
@@ -59,16 +70,25 @@ struct LandingPageView: View {
                                         }
                                     }
                                     Spacer() // Push content to the left
+                                    
+                                    
+                                    // Save Recipe Button (Heart Icon)
+                                    Button(action: {
+                                        
+                                    }) {
+                                        Image(systemName: "heart")
+                                            .font(.system(size: 18))
+                                    }
+
                                 }
                                 .padding()
                                 .background(Color(.secondarySystemBackground))
                                 .cornerRadius(8)
-                                .frame(maxWidth: 340) // Center the items within the screen width
                             }
                         }
                         .padding(.horizontal)
                     }
-                    .frame(height: 450) // Limit the height of the scroll view for top cocktails
+                    .frame(height: 450)
 
                     // Search Results Section
                     if !cocktails.isEmpty {
@@ -98,7 +118,6 @@ struct LandingPageView: View {
                 }
                 .padding()
             }
-            .navigationBarTitle("Find Cocktails", displayMode: .inline)
             .onAppear {
                 fetchTopCocktails()
             }
@@ -118,8 +137,6 @@ struct LandingPageView: View {
     }
 }
 
-
-
 #Preview {
-    LandingPageView()
+    CocktailFeedView()
 }
