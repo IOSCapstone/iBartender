@@ -27,7 +27,7 @@ struct WelcomePageView: View {
                 VStack {
                     NavigationLink(destination: LoginView()) {
                         Text("Log in")
-                            .font(.subheadline)
+                            .font(.system(size: 18))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .frame(width: 200, height: 50)
@@ -37,7 +37,7 @@ struct WelcomePageView: View {
                     
                     NavigationLink(destination: RegistrationView()) {
                         Text("Register")
-                            .font(.subheadline)
+                            .font(.system(size: 18))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .frame(width: 200, height: 50)

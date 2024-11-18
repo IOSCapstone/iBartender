@@ -15,56 +15,63 @@ struct RegistrationView: View {
     @State private var isRegistered = false  // State variable for navigation
 
     var body: some View {
-        VStack(spacing: 20) {
-            Text("Register")
-                .font(.largeTitle)
-                .padding(.bottom, 20)
-
-            // Email field
-            TextField("Email", text: $email)
-                .keyboardType(.emailAddress)
-                .textInputAutocapitalization(.never)
-                .disableAutocorrection(true)
-                .padding()
-                .background(Color(.secondarySystemBackground))
-                .cornerRadius(8)
-
-            // Password field
-            SecureField("Password", text: $password)
-                .padding()
-                .background(Color(.secondarySystemBackground))
-                .cornerRadius(8)
-
-            // Confirm password field
-            SecureField("Confirm Password", text: $confirmPassword)
-                .padding()
-                .background(Color(.secondarySystemBackground))
-                .cornerRadius(8)
-
-            // Sign Up Button
-            Button(action: registerUser) {
-                Text("Sign Up")
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
+        ZStack {
+            Color.burgundy
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 20) {
+                Text("Register")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .padding(.bottom)
                     .foregroundColor(.white)
-                    .cornerRadius(8)
-            }
-            .padding(.top, 20)
 
-            // Display any error message
-            if let errorMessage = errorMessage {
-                Text(errorMessage)
-                    .foregroundColor(.red)
-                    .multilineTextAlignment(.center)
+                // Email field
+                TextField("Email", text: $email)
+                    .keyboardType(.emailAddress)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
                     .padding()
+                    .background(Color(.secondarySystemBackground))
+                    .cornerRadius(8)
+
+                // Password field
+                SecureField("Password", text: $password)
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                    .cornerRadius(8)
+
+                // Confirm password field
+                SecureField("Confirm Password", text: $confirmPassword)
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                    .cornerRadius(8)
+
+                // Sign Up Button
+                Button(action: registerUser) {
+                    Text("Sign Up")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+                .padding(.top, 20)
+
+                // Display any error message
+                if let errorMessage = errorMessage {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                }
             }
-        }
-        .padding()
-        .navigationBarTitle("Sign Up", displayMode: .inline)
-        // Navigation destination to LandingPage
-        .navigationDestination(isPresented: $isRegistered) {
-            CocktailFeedView()
+            .padding()
+            // Navigation destination to CocktailFeedView
+            .navigationDestination(isPresented: $isRegistered) {
+                CocktailFeedView()
+            }
+            
         }
     }
 
