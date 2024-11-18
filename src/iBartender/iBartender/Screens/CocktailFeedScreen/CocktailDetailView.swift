@@ -75,9 +75,8 @@ struct CocktailDetailView: View {
     // Helper function to get ingredients
     private func getIngredients() -> [String] {
         var ingredients: [String] = []
-        // Add ingredients if they exist in your Cocktail model
-        // You'll need to modify this based on your actual data structure
-        // Example:
+ 
+        // Add ingredients...
         if let ingredient1 = cocktail.strIngredient1 { ingredients.append(ingredient1) }
         if let ingredient2 = cocktail.strIngredient2 { ingredients.append(ingredient2) }
         // ... add more ingredients as needed
