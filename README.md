@@ -94,3 +94,5 @@ Wireframes
 - Integrate CocktailDB (Amin) - [X]
 - Search Algorithm (Amin) - [X]
 
+![](https://github.com/IOSCapstone/iBartender/blob/main/Images/zTBHcgin.gif)
+
